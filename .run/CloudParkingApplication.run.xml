@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CloudParkingApplication" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="one.digitalinnovation.parking.CloudParkingApplication" />
+    <module name="cloud-parking" />
+    <option name="PROGRAM_PARAMETERS" value="C:\workspace\cloud-parking\.run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
