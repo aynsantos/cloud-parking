@@ -23,7 +23,7 @@ public class ParkingCreateDTO {
         this.state = state;
     }
 
-    public String getModel() {
+    public String getModel(String uno) {
         return model;
     }
 
