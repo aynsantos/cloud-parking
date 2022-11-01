@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ParkingControllerTest {
+class ParkingControllerTest extends AbstractContainerBase {
 
     @LocalServerPort
     private int randomPort;
@@ -41,7 +41,7 @@ class ParkingControllerTest {
         var createDTO = new ParkingCreateDTO();
         createDTO.setColor("AMARELO");
         createDTO.setLicense("AWP-1010");
-        createDTO.getModel("UNO");
+        createDTO.setModel("UNO");
         createDTO.setState("SP");
 
         RestAssured.given()

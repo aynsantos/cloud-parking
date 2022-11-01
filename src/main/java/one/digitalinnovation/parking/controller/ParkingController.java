@@ -32,7 +32,7 @@ public class ParkingController {
     public ResponseEntity<List<ParkingDTO>> findAll(){
 
        List<Parking> parkingList = parkingService.findAll();
-       List<ParkingDTO> result = parkingMapper.toParkingDTOlist(parkingList);
+       List<ParkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
         return ResponseEntity.ok(result);
     }
 
@@ -67,8 +67,8 @@ public class ParkingController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<ParkingDTO> exit(@PathVariable String id){
-        Parking parking = parkingService.exit(id);
+    public ResponseEntity<ParkingDTO> checkOut(@PathVariable String id){
+        Parking parking = parkingService.checkOut(id);
         return ResponseEntity.ok(parkingMapper.ToParkingDTO(parking));
     }
 
