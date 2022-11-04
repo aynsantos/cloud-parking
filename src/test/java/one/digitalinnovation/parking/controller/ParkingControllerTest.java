@@ -3,7 +3,6 @@ package one.digitalinnovation.parking.controller;
 import io.restassured.RestAssured;
 import one.digitalinnovation.parking.controller.dto.ParkingCreateDTO;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,6 +26,7 @@ class ParkingControllerTest extends AbstractContainerBase {
 
     void whenFindAllThenCheckResult() {
         RestAssured.given()
+                .header("authorization", "Basic dXNlcjoxMjNAMTIz")
                 .when()
                 .get("/parking")
                 .then()
@@ -35,23 +35,5 @@ class ParkingControllerTest extends AbstractContainerBase {
 
     }
 
-    @Test
-    void WhenCreateThenCheckIsCreated() {
 
-        var createDTO = new ParkingCreateDTO();
-        createDTO.setColor("AMARELO");
-        createDTO.setLicense("AWP-1010");
-        createDTO.setModel("UNO");
-        createDTO.setState("SP");
-
-        RestAssured.given()
-                .when()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(createDTO)
-                .post("/parking")
-                .then()
-                .statusCode(HttpStatus.CREATED.value())
-                .body("license", Matchers.equalTo("AWP-1010"));
-
-    }
 }
